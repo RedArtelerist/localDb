@@ -47,7 +47,6 @@ public class Row {
         return list;
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof Row) {

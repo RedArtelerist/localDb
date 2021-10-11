@@ -41,11 +41,7 @@ public class Base {
         else return new ArrayList<>(tables.keySet()).get(tables.size() - 1);
     }
 
-    private Table findTableById(int id){
-        return tables.get(id);
-    }
-
-    private Table findTableByName(String name){
+    public Table findTableByName(String name){
         for(Table table : tables.values())
             if(table.getName().toLowerCase().equals(name.toLowerCase()))
                 return table;
@@ -213,5 +209,20 @@ public class Base {
         } catch (Exception e) {
             throw new Exception("\n\n!!!!Error: invalid data in db!!!!");
         }
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Base) {
+            Base temp = (Base) obj;
+            if(this.name.equals(temp.name) && this.tables.equals(temp.tables))
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.name.hashCode() + this.tables.hashCode();
     }
 }

@@ -1,1 +1,5 @@
-[]
+[
+  {
+    "name":"product","attributes":[{"column":"name","type":"STRING"},{"column":"price","type":"INTEGER"},{"column":"rate","type":"REAL"},{"column":"color","type":"COLOR"}],
+    "id":1,"rows":[{"values":["iphone","2000","5.0","rgb(0,0,0)"],"id":1},{"values":["xiaomi","10000","8.4","rgb(0,0,0)"],"id":3},{"values":["samsung","800","7.0","rgb(0,0,0)"],"id":4},{"values":["asome","100","1.0","rgb(0,0,0)"],"id":5},{"values":["some","1000","9.0","rgb(0,0,0)"],"id":8}]},
+]

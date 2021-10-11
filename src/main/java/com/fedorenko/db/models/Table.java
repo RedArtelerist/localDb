@@ -66,10 +66,6 @@ public class Table {
         else return new ArrayList<>(rows.keySet()).get(rows.size() - 1);
     }
 
-    private Row findRowById(int id){
-        return rows.get(id);
-    }
-
     public void addRow(List<Object> values){
         Integer id = getLastRowId() + 1;
         Row row = new Row(id, this);
@@ -94,5 +90,20 @@ public class Table {
         }
 
         setRows(rowMap);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Table) {
+            Table temp = (Table) obj;
+            if(this.id == temp.id && this.rows.equals(temp.rows))
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id.hashCode() + this.rows.hashCode();
     }
 }
